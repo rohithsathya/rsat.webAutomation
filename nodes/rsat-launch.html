@@ -1,0 +1,26 @@
+<script type="text/javascript">
+    RED.nodes.registerType('rsat-launch',{
+        category: 'automation',
+        color: '#a6bbcf',
+        defaults: {
+            url: {value:"http://www.google.com/ncr"}
+        },
+        inputs:1,
+        outputs:1,
+        icon: "file.png",
+        label: function() {
+            return this.name||"rsat-launch";
+        }
+    });
+</script>
+
+<script type="text/x-red" data-template-name="rsat-launch">
+    <div class="form-row">
+        <label for="node-input-url"><i class="icon-tag"></i> Url</label>
+        <input type="text" id="node-input-url" placeholder="url">
+    </div>
+</script>
+
+<script type="text/x-red" data-help-name="lower-case">
+    <p>Launches the specified url in chrome, and makes it availabel for automation</p>
+</script>
