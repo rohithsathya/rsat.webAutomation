@@ -1,0 +1,62 @@
+<script type="text/javascript">
+    RED.nodes.registerType('wait',{
+        category: 'automation',
+        color: '#a6bbcf',
+        defaults: {
+            until:{value:'elementLocated'},
+            xpath: {value:'/body'},
+            timeout:{value:1000}
+        },
+        inputs:1,
+        outputs:1,
+        icon: "file.png",
+        label: function() {
+            return this.name||"wait";
+        }
+    });
+    function untilChanged(){
+        var e =document.getElementById('node-input-until');
+        var selectedValue = e.options[e.selectedIndex].value;
+        var xpathContainerEle =document.getElementById('xpathContainer');
+        if(selectedValue == "elementIsDisabled" ||
+            selectedValue =="elementIsEnabled" ||
+            selectedValue == "elementIsNotSelected" ||
+            selectedValue =="elementIsSelected"||
+            selectedValue =="elementLocated" ||
+            selectedValue == "elementIsVisible"){
+                xpathContainerEle.style.display = 'block';
+            }else{
+                xpathContainerEle.style.direction ='none';
+            }
+    }
+</script>
+
+<script type="text/x-red" data-template-name="wait">
+
+ <div class="form-row">
+        <label for="node-input-until"><i class="icon-tag"></i> Until</label>
+        <select id="node-input-until" onchange="untilChanged()">
+            <option value="elementIsDisabled">elementIsDisabled</option>
+            <option value="elementIsEnabled">elementIsEnabled</option>
+            <option value="elementIsNotSelected">elementIsNotSelected</option>
+            <option value="elementIsSelected">elementIsSelected</option>
+            <option value="elementLocated">elementLocated</option>
+            <option value="elementIsVisible">elementIsVisible</option>
+            <option value="titleContains">titleContains</option>
+            <option value="urlContains">urlContains</option>
+        </select>
+    </div>
+
+    <div class="form-row">
+        <label for="node-input-xpath"><i class="icon-tag"></i> xpath</label>
+        <input type="text" id="node-input-xpath" placeholder="xpath">
+    </div>
+    <div class="form-row">
+        <label for="node-input-timeout"><i class="icon-tag"></i> Max Timeout</label>
+        <input type="text" id="node-input-timeout" placeholder="Timeout">
+    </div>
+</script>
+
+<script type="text/x-red" data-help-name="wait">
+    <p>waits until the condition is satisfied or timeout</p>
+</script>

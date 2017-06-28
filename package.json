@@ -1,0 +1,24 @@
+{
+  "name": "rsat.automation",
+  "version": "1.0.0",
+  "description": "web automation library based on selenium and node red",
+  "main": "server.js",
+  "dependencies": {
+    "selenium-webdriver": "^3.4.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rohithsathya/rsat.webAutomation.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rohithsathya/rsat.webAutomation/issues"
+  },
+  "homepage": "https://github.com/rohithsathya/rsat.webAutomation#readme"
+}

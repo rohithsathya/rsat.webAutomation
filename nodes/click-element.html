@@ -1,0 +1,26 @@
+<script type="text/javascript">
+    RED.nodes.registerType('click-element',{
+        category: 'automation',
+        color: '#a6bbcf',
+        defaults: {
+            xpath: {value:'//*[@id="_fZl"]'}
+        },
+        inputs:1,
+        outputs:1,
+        icon: "file.png",
+        label: function() {
+            return this.name||"click-element";
+        }
+    });
+</script>
+
+<script type="text/x-red" data-template-name="click-element">
+    <div class="form-row">
+        <label for="node-input-xpath"><i class="icon-tag"></i> xpath</label>
+        <input type="text" id="node-input-xpath" placeholder="xpath">
+    </div>
+</script>
+
+<script type="text/x-red" data-help-name="click-element">
+    <p>find the element by xpath and clicks on it</p>
+</script>

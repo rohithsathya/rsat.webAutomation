@@ -1,0 +1,31 @@
+<script type="text/javascript">
+    RED.nodes.registerType('get-element-text',{
+        category: 'automation',
+        color: '#a6bbcf',
+        defaults: {
+            xpath: {value:'//*[@id="rso"]/div/div/div[1]/div/div/h3/a'},
+            variable:{value:'searchResult'}
+        },
+        inputs:1,
+        outputs:1,
+        icon: "file.png",
+        label: function() {
+            return this.name||"get-element-text";
+        }
+    });
+</script>
+
+<script type="text/x-red" data-template-name="get-element-text">
+    <div class="form-row">
+        <label for="node-input-xpath"><i class="icon-tag"></i> xpath</label>
+        <input type="text" id="node-input-xpath" placeholder="xpath">
+    </div>
+     <div class="form-row">
+        <label for="node-input-variable"><i class="icon-tag"></i> variable</label>
+        <input type="text" id="node-input-variable" placeholder="variable">
+    </div>
+</script>
+
+<script type="text/x-red" data-help-name="get-element-text">
+    <p>find the element by xpath and gets the text value of it.</p>
+</script>

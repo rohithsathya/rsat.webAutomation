@@ -1,0 +1,31 @@
+<script type="text/javascript">
+    RED.nodes.registerType('set-element-text',{
+        category: 'automation',
+        color: '#a6bbcf',
+        defaults: {
+            xpath: {value:'//*[@id="lst-ib"]'},
+            text:{value:'automation using node red'}
+        },
+        inputs:1,
+        outputs:1,
+        icon: "file.png",
+        label: function() {
+            return this.name||"set-element-text";
+        }
+    });
+</script>
+
+<script type="text/x-red" data-template-name="set-element-text">
+    <div class="form-row">
+        <label for="node-input-xpath"><i class="icon-tag"></i> xpath</label>
+        <input type="text" id="node-input-xpath" placeholder="xpath">
+    </div>
+     <div class="form-row">
+        <label for="node-input-text"><i class="icon-tag"></i> Text</label>
+        <input type="text" id="node-input-text" placeholder="Text">
+    </div>
+</script>
+
+<script type="text/x-red" data-help-name="set-element-text">
+    <p>find the element by xpath and gets the text value of it.</p>
+</script>
